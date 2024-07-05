@@ -19,6 +19,7 @@ APlayerPawnBase::APlayerPawnBase()
 	PawnCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("PawnCamera"));
 	RootComponent = PawnCamera;
 	
+	
 
 }
 

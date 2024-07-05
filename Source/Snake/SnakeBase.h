@@ -6,6 +6,7 @@
 
 class ASnakeElementBase;
 
+
 UENUM()
 enum class EMovementDirection {
 	UP,
@@ -39,6 +40,9 @@ public:
 	float MovementSpeed;
 
 
+	
+
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -47,9 +51,11 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-
+	UFUNCTION(BlueprintCallable)
 	void AddSnakeElement(int ElementsNum = 1);
-
+	UFUNCTION(BlueprintCallable)
 	void Move();
+	UFUNCTION()
+	void SnakeElementOverlap(ASnakeElementBase* OverlappedElement, AActor* Other);
 
 };
