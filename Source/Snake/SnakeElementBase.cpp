@@ -55,6 +55,7 @@ void ASnakeElementBase::HandleBeginOverlap(UPrimitiveComponent* OverlapedCompone
 }
 
 void ASnakeElementBase::ToggleCollision()
+
 {
 	if (MeshComponent->GetCollisionEnabled() == ECollisionEnabled::NoCollision) {
 		MeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryOnly);

@@ -7,6 +7,9 @@
 #include "Interactable.h"
 #include "Food.generated.h"
 
+
+class UStaticMeshComponent;
+
 UCLASS()
 class SNAKE_API AFood : public AActor, public IInteractable
 {
@@ -16,6 +19,10 @@ public:
 	// Sets default values for this actor's properties
 	AFood();
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UStaticMeshComponent* FoodMeshComponent;
+
+		
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

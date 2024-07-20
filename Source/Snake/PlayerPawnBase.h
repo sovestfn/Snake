@@ -8,6 +8,7 @@
 
 class UCameraComponent;
 class ASnakeBase;
+class AFood;
 
 UCLASS()
 class SNAKE_API APlayerPawnBase : public APawn
@@ -24,8 +25,16 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	ASnakeBase* SnakeActor;
 
+	UPROPERTY(BlueprintReadWrite)
+	AFood* DefaultFood;
+
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<ASnakeBase> SnakeActorClass;
+
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<AFood> FoodClass;
+
+
 
 
 
@@ -41,6 +50,8 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void CreateSnakeActor();
+	void AddFood();
+
 
 	
 protected:
@@ -52,8 +63,4 @@ protected:
 	
 	UFUNCTION()
 	void SnakeInput(const FInputActionInstance& Instance);
-
-
-
-
 };

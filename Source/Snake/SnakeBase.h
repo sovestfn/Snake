@@ -39,6 +39,12 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	float MovementSpeed;
 
+	UPROPERTY()
+	bool SwitchDirection;
+
+	UPROPERTY()
+	FVector LastElemPrevLocation;
+
 
 	
 
